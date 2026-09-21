@@ -1,0 +1,4 @@
+interface:
+  display_name: "Persistent LAN Preview"
+  short_description: "Serve durable commit-specific phone previews"
+  default_prompt: "Use $persistent-lan-preview to serve this production build persistently for a physical-phone walk."

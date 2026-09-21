@@ -1,0 +1,4 @@
+interface:
+  display_name: "Frozen Pipeline Guard"
+  short_description: "Detect forbidden visual-pipeline changes"
+  default_prompt: "Use $frozen-pipeline-guard to prove this slice stays inside the current frozen-list ruling."

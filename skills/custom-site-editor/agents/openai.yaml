@@ -1,0 +1,4 @@
+interface:
+  display_name: "Custom Site Editor"
+  short_description: "Build a secure visual editor into custom-coded sites"
+  default_prompt: "Add the standard secure drag-and-drop page editor to this custom-coded website."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Excelsior World Slice"
+  short_description: "Ship one governed game-world slice safely"
+  default_prompt: "Use $excelsior-world-slice to execute one approved visual slice and stop at its founder gate."

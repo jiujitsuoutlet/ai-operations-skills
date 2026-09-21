@@ -1,0 +1,348 @@
+/* ============================================================================
+   Funnel design system.
+
+   REPLACE every value in :root with values MEASURED off the client's live site
+   using brand-fidelity-recon. Do not ship the defaults below: they are the
+   structure, not the brand. Everything after :root is device machinery that
+   holds regardless of palette... announcement bar, diagonal slabs, numbered
+   badges, stat cards, kickers, pill CTAs, sticky buy bar.
+
+   No web fonts, no images, no external requests.
+   ========================================================================== */
+:root{
+  /* Grounds, measured */
+  --black:#0a0a0a;        /* primary ground */
+  --black-2:#0d0d10;      /* hero ground */
+  --black-3:#0e0e12;      /* alternating dark sections */
+  --black-4:#111111;      /* cards on dark */
+  --cream:#f3f4ee;        /* light ground */
+  --white:#ffffff;        /* cards on cream */
+
+  /* Ink */
+  --ink-dark:#0a0a0a;     /* on cream and on red chips */
+  --ink:#ffffff;
+  --ink-2:rgba(255,255,255,.70);
+  --ink-3:rgba(255,255,255,.54);
+  --ink-cream-2:rgba(10,10,10,.72);
+  --ink-cream-3:rgba(10,10,10,.55);
+  --line:rgba(255,255,255,.12);
+  --line-soft:rgba(255,255,255,.07);
+  --line-dark:rgba(0,0,0,.10);
+
+  /* Red. The reference site uses exactly one red plus two alphas of it. */
+  --red:#dc2626;
+  --red-grad-to:#e02020;
+  --red-40:rgba(220,38,38,.40);
+  --red-08:rgba(220,38,38,.08);
+  --red-glow:rgba(220,38,38,.10);
+
+  --stack:Arial,Helvetica,sans-serif;
+
+  /* Type, measured. Steps, not fluid: the reference site changes at breakpoints. */
+  --t-h1:2rem;            /* 32px mobile, 40px from 48rem */
+  --t-h2:2.25rem;         /* 36px mobile, 6vw from 48rem */
+  --t-h3:1.0625rem;
+  --t-body:1.0625rem;
+  --t-small:.9375rem;
+  --t-micro:.75rem;       /* 12px: every kicker, chip and badge label */
+
+  --s1:.25rem; --s2:.5rem; --s3:.75rem; --s4:1rem;
+  --s5:1.5rem; --s6:2rem; --s7:3rem; --s8:4.5rem;
+
+  --measure:34rem;
+  --pad:1.375rem;
+  --r-card:1rem;          /* 16px, measured on the stat cards */
+  --r-badge:.75rem;       /* 12px, measured on the numbered badges */
+  --r-chip:.25rem;        /* 4px, measured on the stat label chips */
+  --r-pill:9999px;
+  --diagonal:80px;        /* height of the slab transition band */
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:no-preference){ html{scroll-behavior:smooth} }
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none !important; transition-duration:.01ms !important}
+}
+body{
+  margin:0; background:var(--black); color:var(--ink);
+  font:500 var(--t-body)/1.55 var(--stack);
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+[hidden]{display:none !important}
+
+/* ------------------------------------------------------- announcement bar */
+/* Pinned above everything, exactly as on the reference site: 8px 16px, 12px/600 white. */
+.announce{
+  padding:.5rem 1rem; background:var(--red); color:#fff;
+  font-size:var(--t-micro); font-weight:600; line-height:1.35; text-align:center;
+}
+
+/* ---------------------------------------------------------------- grounds */
+/* Sections alternate. Each band owns its ground and its ink. */
+.band{position:relative}
+.band > .inner{max-width:var(--measure); margin:0 auto; padding:var(--s7) var(--pad)}
+.band-dark{background:var(--black)}
+.band-dark-2{background:var(--black-3)}
+.band-hero{
+  background:
+    radial-gradient(at 0% 0%, var(--red-glow), rgba(0,0,0,0) 55%),
+    var(--black-2);
+}
+.band-cream{background:var(--cream); color:var(--ink-dark)}
+.band-cream h1,.band-cream h2,.band-cream h3{color:var(--ink-dark)}
+.band-cream .dim{color:var(--ink-cream-2)}
+.band-cream .faint{color:var(--ink-cream-3)}
+.band-cream .kicker{color:var(--red)}
+
+/* ------------------------------------------------------ diagonal slab edge */
+/* Measured mechanism: a 200%-tall clipped div inside an 80px band, so the
+   angle is a function of viewport width exactly as it is on the reference site
+   (about 13 degrees on a phone, about 4 on a wide desktop). */
+.slab{position:relative; height:var(--diagonal); overflow:hidden}
+.slab > i{position:absolute; left:0; right:0; height:200%; top:-50%; display:block}
+/* The incoming ground rides 12px below the red edge, which is what leaves the
+   red stripe visible along the diagonal. */
+.slab > .slab-edge{top:calc(-50% + 12px)}
+.slab-red{background:var(--red)}
+.slab-down > .slab-fill{clip-path:polygon(0 0, 100% 60%, 100% 100%, 0 100%)}
+.slab-up   > .slab-fill{clip-path:polygon(0 60%, 100% 0, 100% 100%, 0 100%)}
+.slab-down > .slab-edge{clip-path:polygon(0 0, 100% 60%, 100% 100%, 0 100%)}
+.slab-up   > .slab-edge{clip-path:polygon(0 60%, 100% 0, 100% 100%, 0 100%)}
+.fill-cream{background:var(--cream)}
+.fill-black{background:var(--black)}
+.fill-black-2{background:var(--black-3)}
+
+/* --------------------------------------------------------------- headings */
+/* 900 weight, uppercase, -.04em tracking, .88 leading. All measured. */
+h1,h2{margin:0 0 var(--s4); text-transform:uppercase; font-weight:900;
+      letter-spacing:-.04em; line-height:.88}
+h1{font-size:var(--t-h1)}
+h2{font-size:var(--t-h2)}
+h3{margin:0 0 var(--s2); font-size:var(--t-h3); font-weight:900;
+   text-transform:uppercase; letter-spacing:.03em}
+@media (min-width:48rem){
+  :root{--t-h1:2.5rem; --t-h2:3rem}
+}
+/* Headlines break on meaning. Every line is its own block, never wrapped. */
+.line{display:block}
+.line-red{display:block; color:var(--red)}
+
+p{margin:0 0 var(--s4)} p:last-child{margin-bottom:0}
+.lede{font-size:1.125rem; line-height:1.62; color:var(--ink-2)}
+.band-cream .lede{color:var(--ink-cream-2)}
+.dim{color:var(--ink-2)}
+.faint{color:var(--ink-3); font-size:var(--t-small); line-height:1.5}
+.center{text-align:center}
+
+/* Kicker: 12px, 900, 4px tracking, red. Measured on the reference site's section kickers. */
+.kicker{
+  margin:0 0 var(--s4); color:var(--red);
+  font-size:var(--t-micro); font-weight:900; letter-spacing:.25em;
+  text-transform:uppercase;
+}
+/* Eyebrow pill: white on red, 2px tracking, 6px 14px. */
+.eyebrow{
+  display:inline-block; margin:0 0 var(--s4); padding:.375rem .875rem;
+  border-radius:var(--r-pill); background:var(--red); color:#fff;
+  font-size:var(--t-micro); font-weight:900; letter-spacing:.16em;
+  text-transform:uppercase;
+}
+
+/* ------------------------------------------------------------------- CTAs */
+/* Pill, uppercase, 900, .05em tracking, 16px 36px, subtle 135deg gradient,
+   and no shadow: the reference site does not use one. */
+.cta{
+  display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
+  width:100%; min-height:3.5rem; padding:1rem 2.25rem;
+  font:900 1rem/1.2 var(--stack); letter-spacing:.05em; text-transform:uppercase;
+  text-align:center; text-decoration:none; color:#fff;
+  background:linear-gradient(135deg, var(--red) 0%, var(--red-grad-to) 100%);
+  border:0; border-radius:var(--r-pill); cursor:pointer;
+  transition:filter .14s ease, transform .08s ease;
+}
+.cta:hover{filter:brightness(1.08)}
+.cta:active{transform:translateY(1px)}
+.cta:focus-visible{outline:3px solid #fff; outline-offset:3px}
+.band-cream .cta:focus-visible{outline-color:var(--ink-dark)}
+.cta.ghost{
+  background:none; border:1px solid var(--line); color:var(--ink); font-weight:900;
+}
+.band-cream .cta.ghost{border-color:var(--line-dark); color:var(--ink-dark)}
+.cta.ghost:hover{filter:none; background:rgba(255,255,255,.06)}
+.cta-note{margin:var(--s3) 0 0; text-align:center; font-size:var(--t-small); color:var(--ink-3)}
+.band-cream .cta-note{color:var(--ink-cream-3)}
+
+/* Decline link. Full size, underlined, states what it does. Never a whisper. */
+.decline{
+  display:block; margin:var(--s5) 0 0; padding:var(--s3);
+  text-align:center; font-size:1rem; font-weight:700;
+  color:var(--ink-2); text-decoration:underline; text-underline-offset:.2em;
+}
+.decline:hover{color:var(--ink)}
+.band-cream .decline{color:var(--ink-cream-2)}
+.band-cream .decline:hover{color:var(--ink-dark)}
+
+/* ------------------------------------------------------------------ forms */
+form{display:grid; gap:var(--s3); margin:0}
+label{font-size:var(--t-small); font-weight:700; color:var(--ink-2)}
+input[type=email]{
+  width:100%; min-height:3.5rem; padding:1rem 1.25rem;
+  font:500 1rem/1.2 var(--stack); color:var(--ink);
+  background:rgba(0,0,0,.35); border:1px solid var(--line); border-radius:var(--r-pill);
+}
+input[type=email]::placeholder{color:var(--ink-3)}
+input[type=email]:focus-visible{outline:2px solid var(--red); outline-offset:2px; border-color:var(--red)}
+.msg{min-height:1.3rem; margin:0; font-size:var(--t-small); color:var(--ink-2)}
+.msg[data-state=error]{color:#ff9a9a}
+.msg[data-state=ok]{color:#4ade80}
+
+/* ------------------------------------------------------------------ cards */
+.card{background:var(--black-4); border:1px solid var(--line); border-radius:var(--r-card); padding:var(--s5)}
+.band-cream .card{background:var(--white); border-color:var(--line-dark)}
+.card + .card{margin-top:var(--s3)}
+.card-red{border-color:var(--red-40); background:linear-gradient(180deg, var(--red-08) 0%, var(--black-4) 60%)}
+
+/* Numbered item: 44x44 red square badge, 12px radius, dark ink. Measured. */
+.numbered{display:flex; gap:var(--s4); padding:var(--s4) 0; border-bottom:1px solid var(--line-soft)}
+.numbered:last-child{border-bottom:0}
+.band-cream .numbered{border-color:var(--line-dark)}
+.num{
+  flex:none; width:2.75rem; height:2.75rem; display:grid; place-items:center;
+  border-radius:var(--r-badge); background:var(--red); color:var(--ink-dark);
+  font-size:1.125rem; font-weight:900;
+}
+.numbered h3{margin-bottom:.2rem}
+.numbered p{margin:0; color:var(--ink-2); font-size:var(--t-small)}
+.band-cream .numbered p{color:var(--ink-cream-2)}
+.numbered.engine .num{box-shadow:0 0 0 4px var(--red-08)}
+
+/* Stat cards: white on cream, 16px radius, 32px padding, hairline border. */
+.stats{display:grid; grid-template-columns:repeat(2,1fr); gap:var(--s3); margin:0 0 var(--s5); padding:0; list-style:none}
+.stats li{
+  background:var(--white); border:1px solid var(--line-dark); border-radius:var(--r-card);
+  padding:var(--s5); text-align:left;
+}
+.stat-n{display:block; font-size:2.5rem; font-weight:900; letter-spacing:-.04em; line-height:1; color:var(--ink-dark)}
+.stat-l{
+  display:inline-block; margin-top:var(--s3); padding:.125rem .5rem;
+  border-radius:var(--r-chip); background:var(--red); color:var(--ink-dark);
+  font-size:var(--t-micro); font-weight:900; letter-spacing:.25em; text-transform:uppercase;
+}
+@media (min-width:30rem){ .stats{grid-template-columns:repeat(4,1fr)} }
+
+/* ------------------------------------------------------------------ price */
+.price-row{display:flex; align-items:baseline; gap:var(--s3); flex-wrap:wrap; margin:0 0 var(--s2)}
+.price-now{font-size:3.5rem; font-weight:900; letter-spacing:-.05em; line-height:.85}
+.price-was{font-size:1.125rem; font-weight:700; color:var(--ink-3); text-decoration:line-through}
+.band-cream .price-was{color:var(--ink-cream-3)}
+.price-unit{font-size:var(--t-micro); font-weight:900; letter-spacing:.2em; text-transform:uppercase; color:var(--ink-3)}
+.band-cream .price-unit{color:var(--ink-cream-3)}
+.price-terms{margin:0 0 var(--s4); font-size:var(--t-small); color:var(--ink-2)}
+.band-cream .price-terms{color:var(--ink-cream-2)}
+
+.chips{display:flex; flex-wrap:wrap; gap:var(--s2); margin:0 0 var(--s5); padding:0; list-style:none}
+.chips li{
+  padding:.375rem .75rem; border-radius:var(--r-pill);
+  border:1px solid var(--line); background:rgba(255,255,255,.04);
+  font-size:var(--t-micro); font-weight:900; letter-spacing:.08em;
+  text-transform:uppercase; color:var(--ink-2);
+}
+.band-cream .chips li{border-color:var(--line-dark); background:rgba(0,0,0,.03); color:var(--ink-cream-2)}
+
+/* ------------------------------------------------------------------ lists */
+.checks{list-style:none; margin:0 0 var(--s4); padding:0}
+.checks li{position:relative; margin:0 0 var(--s4); padding-left:1.9rem}
+.checks li:last-child{margin-bottom:0}
+.checks li::before{
+  content:""; position:absolute; left:.15rem; top:.45rem; width:.75rem; height:.42rem;
+  border-left:2.5px solid var(--red); border-bottom:2.5px solid var(--red);
+  transform:rotate(-45deg);
+}
+.checks strong{display:block; font-weight:900; text-transform:uppercase; letter-spacing:.03em; font-size:.9375rem}
+.checks span{display:block; margin-top:.15rem; color:var(--ink-2); font-size:var(--t-small)}
+.band-cream .checks span{color:var(--ink-cream-2)}
+
+/* --------------------------------------------------------------- deadline */
+.deadline-bar{
+  display:flex; align-items:center; justify-content:center; gap:var(--s2);
+  padding:var(--s3) var(--s4); margin:0 0 var(--s5);
+  background:var(--red-08); border:1px solid var(--red-40); border-radius:var(--r-pill);
+  font-size:var(--t-small); font-weight:700; color:var(--ink); text-align:center;
+}
+.band-cream .deadline-bar{color:var(--ink-dark)}
+
+/* --------------------------------------------------------------- the beat */
+.setup-beat{
+  margin:var(--s7) 0 var(--s5); padding:0 0 0 var(--s4);
+  border-left:3px solid var(--red);
+  font-size:1.25rem; line-height:1.4; font-weight:700;
+}
+
+/* ---------------------------------------------------------------- marquee */
+/* The reference site's ticker is skewed one degree and bordered top and bottom. Measured. */
+.marquee{
+  padding:1.25rem 0; border-block:1px solid var(--line);
+  background:var(--black-2); overflow:hidden;
+  transform:skewY(-1deg);
+}
+.marquee-track{display:flex; width:max-content; gap:var(--s5); animation:marquee 38s linear infinite}
+.marquee span{font-size:var(--t-micro); font-weight:900; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--ink-3); white-space:nowrap}
+.marquee span::after{content:"\00B7"; margin-left:var(--s5); color:var(--red)}
+@keyframes marquee{ from{transform:translateX(0)} to{transform:translateX(-50%)} }
+@media (prefers-reduced-motion:reduce){
+  .marquee-track{animation:none; flex-wrap:wrap; width:auto; padding:0 var(--pad); gap:var(--s2) var(--s4)}
+  .marquee-track > span:nth-child(n+9){display:none}
+}
+
+/* -------------------------------------------------------------------- FAQ */
+details{border-bottom:1px solid var(--line-soft)}
+.band-cream details{border-color:var(--line-dark)}
+details:last-of-type{border-bottom:0}
+summary{position:relative; padding:var(--s4) 2rem var(--s4) 0; font-weight:900; cursor:pointer; list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::after{
+  content:""; position:absolute; right:.4rem; top:1.5rem; width:.6rem; height:.6rem;
+  border-right:2.5px solid var(--red); border-bottom:2.5px solid var(--red); transform:rotate(45deg);
+}
+details[open] summary::after{transform:rotate(-135deg); top:1.65rem}
+summary:focus-visible{outline:2px solid var(--red); outline-offset:2px}
+details p{padding:0 0 var(--s5); color:var(--ink-2); font-size:var(--t-small)}
+.band-cream details p{color:var(--ink-cream-2)}
+
+/* ---------------------------------------------------------------- banners */
+.preview-banner{
+  padding:.5rem var(--pad); border-bottom:1px solid var(--line);
+  background:#070709; color:var(--ink-3);
+  font-size:.6875rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; text-align:center;
+}
+.preview-banner strong{color:var(--ink-2)}
+
+/* ----------------------------------------------------------------- buybar */
+.buybar{
+  position:fixed; left:0; right:0; bottom:0; z-index:20;
+  display:flex; align-items:center; gap:var(--s4);
+  padding:var(--s3) var(--pad) calc(var(--s3) + env(safe-area-inset-bottom));
+  background:rgba(10,10,10,.94); border-top:1px solid var(--line);
+  -webkit-backdrop-filter:saturate(1.5) blur(10px); backdrop-filter:saturate(1.5) blur(10px);
+  transform:translateY(115%); transition:transform .2s ease;
+}
+.buybar[data-visible=true]{transform:translateY(0)}
+.buybar .bb-price{font-size:1.5rem; font-weight:900; letter-spacing:-.04em; line-height:1; white-space:nowrap; color:#fff}
+.buybar .bb-label{display:block; margin-bottom:.15rem; font-size:.625rem; font-weight:900;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--ink-3)}
+.buybar .cta{width:auto; flex:1; min-height:3rem; padding:.75rem 1rem; font-size:.9375rem}
+@media (min-width:48rem){ .buybar{display:none} }
+body[data-buybar=on]{padding-bottom:5rem}
+
+/* ----------------------------------------------------------------- footer */
+.site-footer{padding:var(--s6) var(--pad) var(--s8); color:var(--ink-3);
+  font-size:var(--t-small); text-align:center; background:var(--black)}
+.site-footer a{color:var(--ink-2)}
+.site-footer nav{margin:var(--s2) 0 0}
+.site-footer nav a{display:inline-block; padding:.4rem .3rem}
+
+.inner a:not(.cta):not(.decline){color:inherit; text-decoration:underline;
+  text-decoration-color:var(--red); text-underline-offset:.18em; text-decoration-thickness:2px}
+.sr-only{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap}

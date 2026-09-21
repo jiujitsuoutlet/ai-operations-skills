@@ -1,0 +1,4 @@
+interface:
+  display_name: "Mobile WebGL Device Gate"
+  short_description: "Prove WebGL performance on a physical phone"
+  default_prompt: "Use $mobile-webgl-device-gate to prepare and evaluate a physical-iPhone performance run."

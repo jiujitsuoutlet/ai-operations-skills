@@ -1,0 +1,4 @@
+interface:
+  display_name: "Excelsior Gate Release"
+  short_description: "Run corrected-build gates and founder handoff"
+  default_prompt: "Use $excelsior-gate-release to prove this corrected build and stop at the founder gate."

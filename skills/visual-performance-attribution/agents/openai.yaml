@@ -1,0 +1,4 @@
+interface:
+  display_name: "Visual Performance Attribution"
+  short_description: "Attribute frame cost without guesswork"
+  default_prompt: "Use $visual-performance-attribution to measure and rank the real render-cost centers before optimization."

@@ -1,0 +1,15 @@
+{
+  "schema": "frozen-pipeline-targets-v1",
+  "targets": [
+    {
+      "name": "composer-chain",
+      "path": "app/src/pol3d/world.js",
+      "start": "const BLOOM_STRENGTH",
+      "end": "composer.addPass(new OutputPass());"
+    },
+    {
+      "name": "router",
+      "path": "app/src/app.js"
+    }
+  ]
+}

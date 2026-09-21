@@ -1,0 +1,4 @@
+interface:
+  display_name: "Founder Ruling Ledger"
+  short_description: "Turn founder decisions into canonical records"
+  default_prompt: "Use $founder-ruling-ledger to record this ruling without rewriting prior evidence."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Radiance Geometry"
+  short_description: "Build audited GLB and strand geometry"
+  default_prompt: "Use $radiance-geometry to audit this asset or build station-locked surface strands."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Curriculum Surface Projector"
+  short_description: "Seat curriculum topology on replacement geometry"
+  default_prompt: "Use $curriculum-surface-projector to project the governed curriculum onto this replacement mesh without changing topology."

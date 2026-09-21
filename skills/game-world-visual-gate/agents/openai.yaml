@@ -1,0 +1,4 @@
+interface:
+  display_name: "Game World Visual Gate"
+  short_description: "Build founder-ready visual comparison evidence"
+  default_prompt: "Use $game-world-visual-gate to produce a governed founder target package and stop for ruling."

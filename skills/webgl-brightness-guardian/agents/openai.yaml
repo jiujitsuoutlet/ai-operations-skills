@@ -1,0 +1,4 @@
+interface:
+  display_name: "WebGL Brightness Guardian"
+  short_description: "Protect contrast and brightness hierarchy"
+  default_prompt: "Use $webgl-brightness-guardian to measure contrast, plane separation, and the brightest-object envelope."

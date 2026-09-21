@@ -1,0 +1,4 @@
+interface:
+  display_name: "GLB Asset Foundry"
+  short_description: "Intake and qualify production 3D assets"
+  default_prompt: "Use $glb-asset-foundry to inspect, compare, decimate, and qualify these GLB candidates."

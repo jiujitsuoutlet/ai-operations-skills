@@ -1,0 +1,4 @@
+interface:
+  display_name: "Authenticated Mobile Census"
+  short_description: "Verify the real signed-in mobile journey"
+  default_prompt: "Use $authenticated-mobile-census to re-prove the signed-in mobile journey with real WebKit touches."

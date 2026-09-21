@@ -1,0 +1,45 @@
+name = "PROJECT-funnel"
+main = "src/worker.js"
+compatibility_date = "2026-05-01"
+# account_id = "..."   # only if the token has access to more than one account
+
+# Custom domain for the funnel. Requires the CLIENT-DOMAIN.tld zone on this Cloudflare
+# account; wrangler creates the DNS record + cert on first deploy.
+routes = [
+  { pattern = "welcome.CLIENT-DOMAIN.tld", custom_domain = true }
+]
+
+# Serve .html files as text modules -> plain HTML files, no build step.
+[[rules]]
+type = "Text"
+globs = ["**/*.html", "**/*.css", "**/_page.js"]
+fallthrough = true
+
+# Burst limiter: in-memory at the edge, no D1 write, no extra resource.
+# `period` only accepts 10 or 60 seconds, so the 30/hour window lives in D1.
+[[ratelimits]]
+name = "LEAD_RATE_LIMIT"
+namespace_id = "1001"
+simple = { limit = 5, period = 60 }
+
+[[d1_databases]]
+binding = "DB"
+database_name = "PROJECT_DB"
+# Filled in by `wrangler d1 create PROJECT_DB`. Placeholder is intentionally
+# invalid so a deploy against an unconfigured DB fails loudly instead of silently.
+database_id = "REPLACE_WITH_D1_DATABASE_ID"
+migrations_dir = "migrations"
+
+[vars]
+BUNDLE_PRICE_CENTS = ""   # set to your offer price in cents
+# PREVIEW_MODE gates the cart handoff. TRUE (or unset, or anything but the exact
+# string "false") sends every CTA to /preview-checkout instead of the cart platform.
+# Turn it off only when the cart link below is real. `npm run preflight` enforces this.
+PREVIEW_MODE = "true"
+
+# Checkout is the cart platform, not Stripe. Two knobs to turn at launch.
+# Upsell prices deliberately do NOT live here: they are set in the cart platform, and a
+# second copy in this file would drift the moment either side changed.
+THRIVECART_BUNDLE_URL = ""
+# ISO 8601, e.g. "2026-09-01T23:59:00Z". Empty = deadline block hidden entirely.
+OFFER_DEADLINE = ""

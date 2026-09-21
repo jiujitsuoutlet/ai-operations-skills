@@ -1,0 +1,4 @@
+interface:
+  display_name: "Radiance Diagnose"
+  short_description: "Trace visual defects before changing code"
+  default_prompt: "Use $radiance-diagnose to reproduce and attribute this Radiance rendering defect."
