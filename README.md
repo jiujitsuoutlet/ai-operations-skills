@@ -39,7 +39,8 @@ These five are the most relevant to client onboarding, implementation, customer 
 - **Code:** the production agent is private because it runs on real customer data. [jiujitsuoutlet/jjo-nurture-showcase](https://github.com/jiujitsuoutlet/jjo-nurture-showcase) is a public, from-scratch rebuild of its architecture on fictional data: intake, exclusions, cooldown, prioritization, and privacy-safe Telegram delivery.
 - **Example:** [examples/ghl-nurture-agent.md](examples/ghl-nurture-agent.md)
 - **Evidence:** the skill records a staged rollout (10, then 35, then 50 contacts), with a check of the CRM after each step and intake checked against a full CSV export. The production agent runs as scheduled GitHub Actions jobs in a private repo.
-- **Not verified:** production run results are private and not certified here. One known-open item: escaping Markdown in Telegram messages.
+- **Production update (2026-09-21):** the Telegram Markdown-escaping problem that the skill lists as open is fixed in the private production agent. It now sends HTML-safe messages, splits long reports into chunks under Telegram's limit, turns delivery failures into redacted errors, and logs aggregate counts only. The fix merged with automated tests; the skill text below predates it. The public showcase shows the same four delivery and logging patterns on fictional data. It has no AI ranking step, no tagger, and no live CRM connection.
+- **Not verified:** production run results are private and not certified here.
 
 ### 3. [outbound-rollout-safety](skills/outbound-rollout-safety/SKILL.md): guardrails for automations that message real people
 - **Business problem:** automations that text or email people fail in ways that contact someone twice, or quietly skip a lead for weeks.
