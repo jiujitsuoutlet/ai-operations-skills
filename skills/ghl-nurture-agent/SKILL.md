@@ -1,13 +1,13 @@
 ---
 name: ghl-nurture-agent
-description: Build and operate a GoHighLevel lead-nurture / call-list / reactivation agent (gather the interested-universe from pipelines + tags... filter... Claude rank... Telegram), and the hard-won GHL gotchas behind it. Use when building, fixing, or extending a GHL-driven outreach agent, architecting candidate intake as a pipelines+tags union, excluding members from a lead list, rotating fresh leads daily with a cooldown, building a tag-triggered outreach tagger (bot tags, HighLevel workflows send), staging a live rollout behind a DRY_RUN flag, adding transient-retry resilience to the shared GHL client, gathering a large pool cheaply via paginated search, scanning an agent bundle before pushing, or diagnosing why a scheduled GHL/Claude/Telegram job failed. Triggers on words like GoHighLevel, GHL, LeadConnector, call list, nurture agent, reactivation, tagger, lead list, pipeline stage, opportunity, contact tags, member exclusion, hygiene filter, DND, suppression, cooldown, rotation, idempotency, DRY_RUN, ReadTimeout, retry, token error, contact search, pagination, Telegram bot, GitHub Actions cron, `<NURTURE_REPO>`.
+description: Build and operate a GoHighLevel lead-nurture / call-list / reactivation agent (gather the interested-universe from pipelines + tags... filter... Claude rank... Telegram), and the hard-won GHL gotchas behind it. Use when building, fixing, or extending a GHL-driven outreach agent, architecting candidate intake as a pipelines+tags union, excluding members from a lead list, rotating fresh leads daily with a cooldown, building a tag-triggered outreach tagger (bot tags, HighLevel workflows send), staging a live rollout behind a DRY_RUN flag, adding transient-retry resilience to the shared GHL client, gathering a large pool via paginated search, or diagnosing why a scheduled GHL/Claude/Telegram job failed. Triggers on words like GoHighLevel, GHL, LeadConnector, call list, nurture agent, reactivation, tagger, pipeline stage, contact tags, member exclusion, DND, suppression, cooldown, idempotency, DRY_RUN, ReadTimeout, token error, Telegram bot, GitHub Actions cron, JJO-Nurture.
 ---
 > **Portfolio copy:** names, IDs, and business figures are replaced with placeholders or relative wording. The procedure is unchanged.
 
 # GHL Nurture Agent (build + operate playbook)
 
 Everything below was learned live building the JJO call-list agent
-(a private GitHub repo): a scheduled GitHub Action that gathers the
+([jiujitsuoutlet/JJO-Nurture](https://github.com/jiujitsuoutlet/JJO-Nurture), public): a scheduled GitHub Action that gathers the
 interested-lead universe from GoHighLevel, filters it, ranks by
 likelihood-to-answer via Claude Haiku, and posts a rotating daily call list
 plus an appointment report to Telegram. The project-specific tag/pipeline names
@@ -39,13 +39,13 @@ workflow from GitHub repo secrets. Never hardcoded, never in the repo.
 ## Where the interested-universe actually lives: pipelines + tags, not conversations
 
 Lead every intake rebuild with this correction. The original intake read interest
-from the conversations + calendar endpoints on a 90-day window and saw only under a hundred
+from the conversations + calendar endpoints on a 90-day window and saw only a small slice of the
 contacts. That endpoint **silently returns only recent threads**, so a probe
-against it reports a confident wrong denominator... well over a thousand tagged-but-quiet
-contacts were invisible to it, and the under-a-hundred reading nearly killed a correct
+against it reports a confident wrong denominator... most tagged-but-quiet
+contacts were invisible to it, and that low reading nearly killed a correct
 rebuild. A full contact **CSV export** (ground truth when a probe and the
 operator's instinct disagree... see [measure-before-build](../measure-before-build/SKILL.md)) settled it: the real
-universe is **more than ten times that in the pipelines+tags union, about three-quarters callable after
+universe is **many times larger in the pipelines+tags union, with most of it callable after
 filters**. Interest in this CRM lives in the **pipelines** and the **tag
 universe**, not in recent messages. Rebuild intake as a deduplicated union, then
 filter (member / phone-required / full DND) → 14-day cooldown → rank:
@@ -59,7 +59,7 @@ filter (member / phone-required / full DND) → 14-day cooldown → rank:
   `scheduled`, `scholarship-*`, `facebook *`, `not engaged`, `cold`, ...).
 - **Dedupe by contact ID**, merging fields (union tags, keep the richest record).
 - Don't trust one endpoint's view as "all-time." The conversations endpoint
-  returned under a hundred "complete" and was simply the wrong lens... measure the pool from
+  returned a small "complete" count and was simply the wrong lens... measure the pool from
   the source it actually lives in (pipelines + tags), or from an export.
 
 ## Gather cheap, enrich only survivors (the API-volume law)
@@ -174,7 +174,7 @@ build made was wrong until probed:
 
 - The four member-stage keywords first proposed (`won`/`active`/`enrolled`)
   matched ZERO real stages.
-- The "all-time pool is under a hundred" reading was an artifact of the wrong endpoint.
+- The small "all-time pool" reading was an artifact of the wrong endpoint.
 - Guessing which fields a search returns would have silently dropped the DND
   safety filter.
 

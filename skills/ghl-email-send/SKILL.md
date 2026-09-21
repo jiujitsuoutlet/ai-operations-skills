@@ -586,9 +586,9 @@ it forward, which is much stronger evidence than the retrospective finding:
 
 | Send | Subject | Formula? | Open (rank) |
 |---|---|---|---|
-| 2026-07-22 2pm | [an affiliation-announcement subject] | no stake, no formula | **3rd, about 20 points under the others** |
+| 2026-07-22 2pm | [an affiliation-announcement subject] | no stake, no formula | **3rd (lowest)** |
 | 2026-07-24 6am | [memoir subject: How Jiu-Jitsu (verb) (personal outcome)] | `How Jiu-Jitsu [verb] [outcome]` | **1st** |
-| 2026-07-27 9am | [memoir subject: How Jiu-Jitsu became (personal outcome)] | same formula | **2nd, under a point behind 1st** |
+| 2026-07-27 9am | [memoir subject: How Jiu-Jitsu became (personal outcome)] | same formula | **2nd** |
 
 **More than double, same audience, same week.** Zero complaints on all three. Use
 the formula. A subject naming an org, a partner, or an event without a personal
@@ -612,12 +612,12 @@ send in the account's clean history, beating the formula's best by 21 points.**
 
 | Subject | Form | Open (rank) |
 |---|---|---|
-| **I'm a loser** | teaching + objection turn | **1st, about 21 points above the formula's best** |
+| **I'm a loser** | teaching + objection turn | **1st** |
 | [memoir subject: How Jiu-Jitsu (verb) (personal outcome)] | memoir | 2nd (the formula's best) |
-| [memoir subject: How Jiu-Jitsu became (personal outcome)] | memoir | 3rd, under a point behind 2nd |
-| [memoir subject: How Jiu Jitsu helps (personal outcome)] | memoir | 4th, about 2 points behind 2nd |
-| I was the worst... | memoir | 5th, about 10 points behind 2nd |
-| [an affiliation-announcement subject] | memoir, no formula | 6th, about 20 points behind 2nd |
+| [memoir subject: How Jiu-Jitsu became (personal outcome)] | memoir | 3rd |
+| [memoir subject: How Jiu Jitsu helps (personal outcome)] | memoir | 4th |
+| I was the worst... | memoir | 5th |
+| [an affiliation-announcement subject] | memoir, no formula | 6th |
 
 Two conclusions, and both correct earlier entries in this skill:
 
@@ -818,6 +818,8 @@ Rule: if a quantity is not in the life file or supplied by the operator, rewrite
 the sentence so it does not need one.
 
 ## The operator's subject voice may diverge from the winning formula. Track, do not argue.
+
+> **Superseded in part (2026-08-26).** This section predates "RESOLVED 2026-08-26" above. There, the confession shape became a validated peer of the formula, not a deviation to track. The tracking instructions below are kept for the record. *(Note added in this portfolio copy; see the README.)*
 
 Three consecutive operator-written subjects abandoned the validated
 `How Jiu-Jitsu [verb] [outcome]` formula for short blunt first-person

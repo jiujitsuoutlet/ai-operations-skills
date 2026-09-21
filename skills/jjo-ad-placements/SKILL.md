@@ -1,6 +1,6 @@
 ---
 name: jjo-ad-placements
-description: Nejat's locked placement policy for every Meta/Facebook ad campaign, JJO or client. Only four placements are ever approved... Facebook Feed, Facebook Reels, Instagram Feed, Instagram Reels. Everything else is excluded explicitly, including profile_feed, Stories, Audience Network, Marketplace, Search, Threads, and Messenger. Use this skill EVERY time you create, duplicate, or modify a Meta ad set, ad, or creative, and every time you audit an existing campaign's delivery. Triggers on ad set, placement, campaign build, targeting, publisher_platforms, facebook_positions, instagram_positions, Advantage+, Advantage Plus, automatic placements, duplicate campaign, launch ad, new ad set, audit placements, where are my ads showing. If a Meta ad object is being written or reviewed, this skill applies... do not skip it because the request seemed simple. Also carries campaign STRUCTURE policy settled from this account's own data (many ads per ad set is correct per Andromeda; gender-split ad sets beat combined here), the API-vs-Ads-Manager boundary (multi-advertiser ads and ad-level URL parameters cannot be set through the API, so never rebuild a hand-edited campaign via API), and the required UTM template that makes spend traceable to an ad in GoHighLevel.
+description: Nejat's locked placement policy for every Meta/Facebook ad campaign, JJO or client. Only four placements are ever approved... Facebook Feed, Facebook Reels, Instagram Feed, Instagram Reels. Everything else is excluded explicitly, including profile_feed, Stories, Audience Network, Marketplace, Search, Threads, and Messenger. Use this skill EVERY time you create, duplicate, or modify a Meta ad set, ad, or creative, and every time you audit an existing campaign's delivery. Triggers on ad set, placement, campaign build, targeting, publisher_platforms, facebook_positions, instagram_positions, Advantage+, automatic placements, duplicate campaign, launch ad, audit placements, where are my ads showing. If a Meta ad object is being written or reviewed, this skill applies... do not skip it because the request seemed simple. Also covers this account's campaign structure defaults, the API-vs-Ads-Manager boundary (never rebuild a hand-edited campaign via API), and the required UTM template for GoHighLevel attribution.
 ---
 > **Portfolio copy:** names, IDs, and business figures are replaced with placeholders or relative wording. The procedure is unchanged.
 
@@ -229,12 +229,7 @@ recommend pruning to 3-6 ads on budget-per-ad grounds.
 
 Same geography, same radius, same exclusions, ad-set level:
 
-| Ad set | Structure | Spend (index) | Leads (index) | CPL (index) |
-|---|---|---|---|---|
-| Female | **gender-split** | 100 | 100 | **100** |
-| Male | **gender-split** | ~77 | ~71 | **~109** |
-| Agency-built | M+F combined | ~100 | ~73 | ~138 |
-| Agency-built | M+F combined | ~94 | ~65 | ~145 |
+(Per-ad-set spend, lead, and cost-per-lead figures are omitted from this public copy. Observed: both gender-split ad sets had a lower cost per lead than both combined ad sets.)
 
 Split beat combined by roughly 30% on CPL. Confounded by offer and season, so
 not proof... but there is no evidence in this account that consolidating helps,

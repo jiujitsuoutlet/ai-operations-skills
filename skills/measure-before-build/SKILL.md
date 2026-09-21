@@ -38,7 +38,7 @@ surface than the question asked, and the instinct was right about the whole.
 A conversations-endpoint probe reported **a small lead count** and nearly killed a correct
 rebuild... the plan was almost scrapped as "not enough pool to justify it." The
 operator's instinct said *we have thousands*. A full contact **CSV export**
-settled it: **about 30x as many contacts**, and a **callable pool about 11x the probe's count** after filters.
+settled it: **many times as many contacts**, and a **callable pool many times the probe's count** after filters.
 The probe was not broken... it was faithfully counting the wrong denominator
 (recent message threads, not the pipelines+tags lead universe). The instinct was
 right; the instrument was aimed wrong. See [ghl-nurture-agent](../ghl-nurture-agent/SKILL.md) for the intake

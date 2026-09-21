@@ -36,7 +36,9 @@ BLOCKING
 - Lines 3-4 reach back into the cooldown to hit 200. That is the one limit the skill says
   never to relax. Under-fill or skip, and post a plain skip notice, for example:
   "skipped 2026-10-06, only 37 fresh, below floor 50... will retry next cycle"
-- Line 8 is a PUT of the whole tag array. It deletes tags other systems own. Use add-tag.
+- Line 8 looks like a full-record update. If put_contact sends the whole tag array (a PUT,
+  like HighLevel's update-contact), it replaces the contact's tags and deletes tags other
+  systems own. Confirm the client's semantics; use an add-tag call either way.
 
 HIGH
 - No DRY_RUN flag. Ship one defaulted ON. It posts the would-be batch and applies nothing.
@@ -46,12 +48,13 @@ HIGH
 - Line 11 logs a claim. Re-read the tagged records as a separate check.
 
 MEDIUM
-- A rerun on the same night would text the same people again. Count today's stamp and top up
-  to the cap instead.
+- Nothing counts today's sends before acting. Unless in_cooldown() reads the "texted-today"
+  tag (this code does not show it), a same-night rerun can text people twice or exceed the
+  cap. Count today's stamp and top up to the cap instead.
 - Put retry for transient failures in the shared CRM client, and raise a named error when a
   401 persists across all attempts.
 ```
 
 ## What the example shows
 
-The skill turns one rule into a mechanical audit: find the state write and the delivery call, and confirm which one runs first.
+The skill turns one rule into a mechanical audit: find the state write and the delivery call, and confirm which one runs first. The review states what the code shows, and marks anything that depends on code it cannot see (`put_contact`, `in_cooldown`) as conditional.

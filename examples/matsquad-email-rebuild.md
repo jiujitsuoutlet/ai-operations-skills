@@ -11,7 +11,7 @@ Example Academy wants off Mailchimp and onto HighLevel. 10,000 contacts, $400/mo
 Plan the migration.
 ```
 
-## Sample output (abridged)
+## Sample output (abridged; this is a plan, nothing has been migrated)
 
 ```text
 STEP 0: before anything else
@@ -27,8 +27,8 @@ FOUR BUCKETS, THREE FATES (from the engagement export)
 
 SUNSET CAMPAIGN (runs on Mailchimp, the platform being abandoned)
   3 emails over 2 weeks, one ask: "still want these?"
-  The click lands on a HighLevel opt-in page: responders arrive tagged, with documented
-  express consent and an optional phone field with SMS consent language.
+  The click lands on a HighLevel opt-in page, built so responders arrive tagged, with
+  documented express consent and an optional phone field with SMS consent language.
   Silence = removed from the bulk list for good. The campaign has an end date.
 
 SENDING INFRASTRUCTURE

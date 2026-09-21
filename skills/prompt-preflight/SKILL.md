@@ -74,7 +74,7 @@ Check every draft before output. Flag hits in 1-2 blunt lines after the delivera
 5. **Brand language:** academy (not gym), team members (not students), training sessions/practices (not classes), roll/rolling (not sparring), aggression (not "controlled intensity"), ninja squad.
 6. **Balance:** winning AND losing, struggle AND joy. Gender/age inclusive framing. Emotional hits go in parentheticals.
 7. **Close the loop.** Every setup gets its payoff.
-8. **Email specific:** no formal greeting, 30% shorter than first draft, sign "Paul" for work / "Nejat" for personal per context.
+8. **Email specific:** greeting and length follow the Email section of `references/voice-specs.md` (always greet; 400 to 700 words). That section corrected an earlier "no formal greeting, 30% shorter than first draft" rule on 2026-07-22 against the send archive. Sign "Paul" for work / "Nejat" for personal per context. *(Reconciled in this portfolio copy; see the README.)*
 
 ## Step 6 ... Output format
 

@@ -60,13 +60,13 @@ Extraction, in order of preference:
 2. JavaScript reads for what text extraction misses: toggle states, form values, radio selections, truncated tables, row counts, link censuses. Proven snippets with usage notes: `references/recon-snippets.md`.
 3. Screenshot or zoom only when the number lives in a chart, not the DOM.
 
-Chart law: click every range control (day, month, year, all-time, custom) on every revenue chart. The default range is a marketing choice. On the forging engagement the 30-day card, the all-time view of the same card, and the platform's own lifetime figure were three numbers that differed by orders of magnitude. Three numbers, three stories, one business.
+Chart law: click every range control (day, month, year, all-time, custom) on every revenue chart. The default range is a marketing choice. On the forging engagement the 30-day card, the all-time view of the same card, and the platform's own lifetime figure were three very different numbers. Three numbers, three stories, one business.
 
 ### Phase 3: Verification
 
 Not optional. Findings without cross-checks are the platform's claims, not yours.
 
-- Every headline number gets a source page plus one cross-check on a different page. When pages disagree, report the disagreement verbatim with both sources. Do not reconcile silently. Forging engagement member count: four different figures, the largest more than ten times the smallest... four pages, four answers.
+- Every headline number gets a source page plus one cross-check on a different page. When pages disagree, report the disagreement verbatim with both sources. Do not reconcile silently. Forging engagement member count: four different figures... four pages, four answers.
 - Sanity-check arithmetic. A 7-day figure larger than the 30-day figure of the same metric is an instrumentation bug worth reporting on its own.
 - **Money rule.** Identify which processor account each revenue widget reads. Assume multiple processors until proven otherwise. A dashboard reading one young Stripe account is a slice, not the business.
 - **Access rule.** Trace one purchase from checkout to entitlement: webhook endpoint, verification secret status, product-to-access mapping. Hunt for unmapped products that have buyers... those are paying customers who received nothing, and they are the single most valuable find in the audit. Distinguish the ACTIVE provider from providers that are merely connected.

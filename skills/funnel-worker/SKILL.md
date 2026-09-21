@@ -3,6 +3,14 @@ name: funnel-worker
 description: Build a paid-traffic funnel on Cloudflare Workers with D1 and hosted checkout such as Stripe Checkout, ThriveCart, SamCart, or Gumroad. Covers intake, the scaffold, the default owner page editor, preview mode, deploy gates, lead capture, A/B assignment, attribution, signed webhooks, and fulfillment boundaries. Use when building or changing an offer page, bridge page, funnel, landing page, upsell or downsell, cart handoff, split test, or purchase attribution.
 ---
 > **Portfolio copy:** names, IDs, and business figures are replaced with placeholders or relative wording. The procedure is unchanged.
+>
+> **Status: incomplete reference scaffold, not a ready-to-run tool.** `assets/` is the reference code for the pattern described below. It does not build or deploy as shipped, and the private source is missing the same files:
+> - the four page templates `assets/worker.js` imports: `pages/landing-a.html`, `pages/landing-b.html`, `pages/thanks.html`, `pages/preview-checkout.html`
+> - a `package.json` defining the `preflight`, `scan`, `build:tc`, and `deploy` scripts
+> - the cart page sources under `src/cart/_src/` read by `build-cart-pages.mjs`
+> - the `src/deferred/` folder
+>
+> The scripts expect the files under `src/` (as `wrangler.toml` sets `main = "src/worker.js"`), while this copy keeps them in `assets/`. The preflight gate's required-section list is a placeholder to replace.
 
 # Funnel Worker
 

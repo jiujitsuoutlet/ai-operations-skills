@@ -1,12 +1,15 @@
 ---
 name: pixel-forensics
-description: The measured way to root-cause any rendered-pixel defect, ANY project... intermittent visual failures, brightness/margin law violations, "something saturates/flickers/washes" bugs in canvas or WebGL scenes, unwanted banding/stripes on symmetric geometry, "added content that isn't showing up", and "it changes in the buffer but I can't see it / can't see the motion." Locate the exact offending pixel, attribute it by suppression matrix and crop, bisect with valid controls, then fix at the source by construction... and know when a change is MEASURABLE but not PERCEIVED (the additive/bloom-near-clip trap where brightness is a dead axis and only contrast/dimming reads). Extracted from consecutive wins on the Excelsior COSMOS build (sky saturation flake, mist orb-veil, ray pop, terrain moat/banding, invisible rope-flow current). Triggers on words like argmax, brightest pixel, saturate, blown out, intermittent visual, flicker, margin failure, luminance, suppression, bisect, veil, washed out, banding, stripe, ring artifact, void, gap that isn't a gap, invisible animation, can't see the motion, reads flat, additive, bloom, clipping, perceived vs measured.
+description: The measured way to root-cause any rendered-pixel defect, ANY project... intermittent visual failures, brightness/margin law violations, "something saturates/flickers/washes" bugs in canvas or WebGL scenes, banding/stripes on symmetric geometry, "added content that isn't showing up", and "it changes in the buffer but I can't see it / can't see the motion." Locate the exact offending pixel, attribute it by suppression matrix and crop, bisect with valid controls, then fix at the source by construction... and know when a change is MEASURABLE but not PERCEIVED (the additive/bloom-near-clip trap where brightness is a dead axis and only contrast/dimming reads). Extracted from consecutive wins on the Excelsior COSMOS build. Triggers on words like argmax, brightest pixel, saturate, blown out, flicker, margin failure, luminance, suppression, bisect, veil, washed out, banding, stripe, ring artifact, gap that isn't a gap, invisible animation, can't see the motion, additive, bloom, clipping, perceived vs measured.
 ---
+> **Portfolio copy:** description shortened to fit the 1,024-character limit (redundant trigger words trimmed; its list of source cases moved into the opening paragraph). The procedure is unchanged.
 
 # Pixel Forensics... Root-Causing Rendered Defects by Measurement
 
 Guessing at visual defects burns iterations (two blind term-retunes failed
-before this method landed its first win). The method is four moves, in
+before this method landed its first win). The cases it was extracted from: sky
+saturation flake, mist orb-veil, ray pop, terrain moat/banding, and an invisible
+rope-flow current. The method is four moves, in
 order, and the fix at the end is BY CONSTRUCTION, not by nudging.
 
 ## 1. Locate: argmax, not adjectives

@@ -4,6 +4,8 @@
 
 Skill: [`skills/ghl-nurture-agent`](../skills/ghl-nurture-agent/SKILL.md)
 
+Implementation: the public repo [jiujitsuoutlet/JJO-Nurture](https://github.com/jiujitsuoutlet/JJO-Nurture) holds the call-list agent (`main.py`) and the reactivation tagger (`reactivate.py`) this skill describes. The output below is synthetic; that code did not produce it.
+
 ## Invocation
 
 ```text
@@ -28,7 +30,7 @@ sending; the bot only tags. Ship it safely.
 6. DRY_RUN ships true. Then scale the cap in steps (10, 35, 50) with a read-back after each.
 ```
 
-**First run, DRY_RUN preview posted to Telegram** (phones masked in the run log):
+**First run, DRY_RUN preview posted to Telegram** (nothing is tagged; phones masked in the run log):
 
 ```text
 [DRY_RUN] Reactivation batch 2026-10-06 (nothing tagged)
@@ -40,7 +42,7 @@ Funnel: pipelines 640 | tags 1,120 | union 1,310 | -members 1,090 | -no phone 1,
 10. Sam T.    (***-***-5512)  "new lead" tag, never contacted
 ```
 
-**Member-exclusion test** (the skill says to test the risky logic before pushing):
+**Member-exclusion tests to write before pushing** (the skill says to test the risky logic first; these are test cases, not results):
 
 ```python
 assert is_member([" Current-Member-North "])      # casing and whitespace variants

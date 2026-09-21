@@ -20,11 +20,11 @@ Exports before opinions. Engagement data before everything.
 
 **The real numbers:**
 - Clicks, click-to-open rate, bounce rate. Nothing else.
-- Click trend vs volume trend. Example: last month nearly 2x the volume for the same clicks as the 3-year monthly average. Doubled mail, same result... that is list fatigue, measured.
-- **Channel cost per click** = monthly platform cost ÷ monthly clicks, compared against the client's own paid CPC. Example: email clicks cost about 20x the ad clicks. This ratio ends debates.
+- Click trend vs volume trend. Illustrative example: twice the send volume for the same monthly clicks. Doubled mail, same result... that is list fatigue, measured.
+- **Channel cost per click** = monthly platform cost ÷ monthly clicks, compared against the client's own paid CPC. Illustrative example: a $300/month platform bill and 150 clicks is $2.00 per email click, against $0.40 per ad click (illustrative numbers). This ratio ends debates.
 
 **Bounce forensics:**
-- Over 2% is a problem. One client ran more than double that for three years.
+- Over 2% is a problem.
 - **Repeating soft-bounce counts on consecutive sends** (80 then 82, 150 then 149, illustrative numbers) = receiving servers actively refusing, not dead mailboxes. Hard bounces auto-suppress after one failure, so a repeating count means blocks nobody is investigating.
 - Bounces > clicks on a campaign means the channel was refused more than acted on. Say it exactly that way.
 
@@ -41,19 +41,19 @@ Never claim "your mail goes to spam" without Google Postmaster Tools data. Set u
 
 Profile the export in pandas: status split, permission status, source, created-year histogram, domain mix, duplicates, syntax validity, role addresses, and platform placeholder addresses (pattern: `*deleted@smoothcomp.com`... guaranteed hard bounces).
 
-- **Age is the bounce explanation.** Report % of active contacts older than 3 years. Example: about half.
+- **Age is the bounce explanation.** Report % of active contacts older than 3 years.
 - **Consent is the headline.** Mass "Implied" permission + source "Added by you" = uploaded registration data, never opted in. Defensible for email, illegal for SMS (TCPA: prior express written consent, $500-1,500 statutory per text). No phone column = no SMS list exists, full stop. This reframes the opt-in funnel from tracking workaround to the only compliant path to a text list.
-- **Year-gap detection.** A collapsed year of additions (example: one year's additions fell about 90%, then the next year recovered most of the way) means paused events or a broken import. Ask which. Broken imports are often recoverable at the source platform... found money.
+- **Year-gap detection.** A collapsed year of additions (for example, one year's additions collapse and the next year's recover) means paused events or a broken import. Ask which. Broken imports are often recoverable at the source platform... found money.
 - Unsubscribes are a permanent legal suppression list. They migrate first, everywhere, forever.
 
 ## Meta ad account audit
 
 Lifetime export, ad-set level. In order:
 
-1. **Objective distribution.** Count ad sets by result type. Example: nearly all ad sets optimized for link clicks, zero conversion or lead campaigns ever. When it's all traffic objective, ROAS isn't unknown... it's uncomputable by construction. That's the diagnosis in one row.
-2. **The evaporation stat.** Total clicks purchased vs total list growth from ALL sources over the same period. Example: clicks bought outnumbered list growth about 20 to 1. It is the single best pitch number that exists... lead with it.
-3. **Trend by year:** CPC, CTR, CPM. An improving trend means a competent operator, which flips the pitch tone from "broken" to "well-bought clicks with no bucket underneath." Example: CPC halved by 2026, CTR up every year.
-4. **Frequency.** Over 4 = saturation. Tiny reach + double-digit frequency = money burned on the same eyeballs (example: frequency above 30 on an audience under 1,000).
+1. **Objective distribution.** Count ad sets by result type. Illustrative pattern: every ad set optimized for link clicks, zero conversion or lead campaigns ever. When it's all traffic objective, ROAS isn't unknown... it's uncomputable by construction. That's the diagnosis in one row.
+2. **The evaporation stat.** Total clicks purchased vs total list growth from ALL sources over the same period. Illustrative example: 100,000 clicks bought, 5,000 contacts of list growth (illustrative numbers). It is the single best pitch number that exists... lead with it.
+3. **Trend by year:** CPC, CTR, CPM. An improving trend means a competent operator, which flips the pitch tone from "broken" to "well-bought clicks with no bucket underneath." Illustrative pattern: CPC falling and CTR rising year over year.
+4. **Frequency.** Over 4 = saturation. Tiny reach + double-digit frequency = money burned on the same eyeballs (illustrative: frequency above 30 on an audience under 1,000).
 5. **Budget pattern.** Flat spend across unequal markets = no return signal to steer by. Not incompetence... blindness. Name it that way.
 6. **Placement/creative winners from their own data.** One client's Reels ad sets ran a standout CTR at below-average CPC... their own account voted the creative direction. Caveat: link-click CPC on Reels overstates quality (accidental taps); nobody knows click→page-load rate until a landing-page-view or conversion campaign runs.
 7. **Warm audiences.** Check for video-view and engagement custom audiences. They need no pixel and are usually absent... millions of impressions with every event restarting from cold is the biggest free win in most accounts.
@@ -62,7 +62,7 @@ Lifetime export, ad-set level. In order:
 
 - Three sources before a conclusion. One header nearly produced a false "authentication is broken" finding twice, in both directions.
 - A search-result fact is not a client fact. "Sold out before" came from a search hit and turned out to sit next to the client's worst-performing market... verify with the client before anything enters a pitch or an ad.
-- When a stat validates the plan you already wanted, attack it hardest. The sky-high open rate that "proved" the coupon strategy was a list of only a hundred or two people.
+- When a stat validates the plan you already wanted, attack it hardest. The sky-high open rate that "proved" the coupon strategy was a very small list.
 - Present what's RIGHT first, by name. "Your authentication is clean, your testing structure is real" buys the credibility that the bad findings spend.
 - Corrected errors get corrected out loud, immediately. The DO NOT SAY list in call prep is built from your own retractions.
 
