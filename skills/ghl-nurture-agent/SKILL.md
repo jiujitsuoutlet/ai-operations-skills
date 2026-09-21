@@ -7,7 +7,7 @@ description: Build and operate a GoHighLevel lead-nurture / call-list / reactiva
 # GHL Nurture Agent (build + operate playbook)
 
 Everything below was learned live building the JJO call-list agent
-([jiujitsuoutlet/JJO-Nurture](https://github.com/jiujitsuoutlet/JJO-Nurture), public): a scheduled GitHub Action that gathers the
+(a private GitHub repo; public showcase on fictional data: [jiujitsuoutlet/jjo-nurture-showcase](https://github.com/jiujitsuoutlet/jjo-nurture-showcase)): a scheduled GitHub Action that gathers the
 interested-lead universe from GoHighLevel, filters it, ranks by
 likelihood-to-answer via Claude Haiku, and posts a rotating daily call list
 plus an appointment report to Telegram. The project-specific tag/pipeline names

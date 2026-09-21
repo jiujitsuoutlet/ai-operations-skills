@@ -4,7 +4,7 @@
 
 Skill: [`skills/ghl-nurture-agent`](../skills/ghl-nurture-agent/SKILL.md)
 
-Implementation: the public repo [jiujitsuoutlet/JJO-Nurture](https://github.com/jiujitsuoutlet/JJO-Nurture) holds the call-list agent (`main.py`) and the reactivation tagger (`reactivate.py`) this skill describes. The output below is synthetic; that code did not produce it.
+Implementation: the production call-list agent and reactivation tagger this skill describes live in a private repo. [jiujitsuoutlet/jjo-nurture-showcase](https://github.com/jiujitsuoutlet/jjo-nurture-showcase) is a public, from-scratch rebuild of the call-list architecture on fictional data, without the AI ranking pass and the tagger. The output below is synthetic; neither codebase produced it.
 
 ## Invocation
 

@@ -29,9 +29,9 @@ Sections: [1 Featured](#1-featured) · [2 CRM, marketing, and client work](#2-cr
 - **Purpose:** Build and run a scheduled HighLevel lead-nurture agent. It gathers pipelines plus interest tags, filters out members, Do-Not-Contact and phone-less contacts, applies a cooldown, ranks with Claude Haiku, and delivers to Telegram. A companion tagger feeds HighLevel SMS workflows.
 - **Business problem:** Turn a large CRM into a safe daily call and text list. It must never call paying members or Do-Not-Call contacts, never re-contact people too soon, and never hit rate limits.
 - **Inputs → outputs:** GHL token and location, pipeline and tag conventions, cooldown and cap settings → ranked daily list, masked run log with funnel counts, dated tags that drive HighLevel workflows.
-- **Contribution:** I specified the agent and its guardrails, confirmed which tags and stages mean "member", and ran the rollout. Claude Code wrote the agent and drafted this playbook from that build. The agent's code is public: [jiujitsuoutlet/JJO-Nurture](https://github.com/jiujitsuoutlet/JJO-Nurture) (`main.py` call list, `reactivate.py` tagger).
+- **Contribution:** I specified the agent and its guardrails, confirmed which tags and stages mean "member", and ran the rollout. Claude Code wrote the agent and drafted this playbook from that build. The agent's code is private production code. A public, from-scratch rebuild of its architecture on fictional data: [jiujitsuoutlet/jjo-nurture-showcase](https://github.com/jiujitsuoutlet/jjo-nurture-showcase).
 - **Dependencies:** GHL/LeadConnector REST API, Anthropic API (Haiku), Telegram Bot API, GitHub Actions (cron plus repo secrets), `gh` CLI, Python.
-- **Verification:** "Learned live building the call-list agent." It records the staged rollout (10 → 35 → 50) with a read-back at each step, intake checked against a full CSV export, and throwaway-venv asserts before pushing. One known-open item: Telegram Markdown escaping. No tests ship in the skill. The implementation repo has scheduled GitHub Actions workflows; this portfolio does not certify their current results.
+- **Verification:** "Learned live building the call-list agent." It records the staged rollout (10 → 35 → 50) with a read-back at each step, intake checked against a full CSV export, and throwaway-venv asserts before pushing. One known-open item: Telegram Markdown escaping. No tests ship in the skill. The production agent runs as scheduled GitHub Actions jobs in a private repo; this portfolio does not certify their results.
 - **Example:** [examples/ghl-nurture-agent.md](examples/ghl-nurture-agent.md)
 
 ### outbound-rollout-safety
@@ -40,7 +40,7 @@ Sections: [1 Featured](#1-featured) · [2 CRM, marketing, and client work](#2-cr
 - **Inputs → outputs:** An automation design or its code → a staged-rollout plan, a verdict on write/send ordering, skip notices, a retry and fail-loud client structure.
 - **Contribution:** Rules I set while building my reactivation tagger, including "never relax a safety limit to hit a number". The ordering rule comes from an incident in my call-list agent. Claude Code drafted the text.
 - **Dependencies:** None. Pairs with [ghl-nurture-agent](skills/ghl-nurture-agent/SKILL.md) and [ghl-email-send](skills/ghl-email-send/SKILL.md).
-- **Verification:** One documented production incident (a length-limit 400 after the state had already been written). The dry-run flag, pool floor, and cooldown appear in the public tagger (`reactivate.py` in JJO-Nurture). No tests.
+- **Verification:** One documented production incident (a length-limit 400 after the state had already been written). The rules are applied in the private production tagger. The public showcase ([jiujitsuoutlet/jjo-nurture-showcase](https://github.com/jiujitsuoutlet/jjo-nurture-showcase)) demonstrates dry-run by default and a cooldown window. No tests.
 - **Example:** [examples/outbound-rollout-safety.md](examples/outbound-rollout-safety.md)
 
 ### matsquad-email-rebuild
