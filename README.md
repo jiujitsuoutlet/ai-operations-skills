@@ -36,10 +36,10 @@ These five are the most relevant to client onboarding, implementation, customer 
   - A companion tagger marks leads so HighLevel workflows send the texts.
   - It rolls out behind a dry-run switch.
 - **My contribution:** I specified the agent and its safety rules, confirmed which tags mean "member", and ran the rollout. Claude Code wrote the code and drafted the playbook.
-- **Code:** the implementation is public at [jiujitsuoutlet/JJO-Nurture](https://github.com/jiujitsuoutlet/JJO-Nurture): the call list is `main.py` and the tagger is `reactivate.py`.
+- **Code:** the production agent is private because it runs on real customer data. [jiujitsuoutlet/jjo-nurture-showcase](https://github.com/jiujitsuoutlet/jjo-nurture-showcase) is a public, from-scratch rebuild of its architecture on fictional data: intake, exclusions, cooldown, prioritization, and privacy-safe Telegram delivery.
 - **Example:** [examples/ghl-nurture-agent.md](examples/ghl-nurture-agent.md)
-- **Evidence:** the skill records a staged rollout (10, then 35, then 50 contacts), with a check of the CRM after each step and intake checked against a full CSV export. The implementation repo has scheduled GitHub Actions workflows.
-- **Not verified:** this portfolio does not certify current run results; that repo's Actions history is the record. One known-open item: escaping Markdown in Telegram messages.
+- **Evidence:** the skill records a staged rollout (10, then 35, then 50 contacts), with a check of the CRM after each step and intake checked against a full CSV export. The production agent runs as scheduled GitHub Actions jobs in a private repo.
+- **Not verified:** production run results are private and not certified here. One known-open item: escaping Markdown in Telegram messages.
 
 ### 3. [outbound-rollout-safety](skills/outbound-rollout-safety/SKILL.md): guardrails for automations that message real people
 - **Business problem:** automations that text or email people fail in ways that contact someone twice, or quietly skip a lead for weeks.
@@ -50,7 +50,7 @@ These five are the most relevant to client onboarding, implementation, customer 
   - Record "contacted" only after the send succeeds.
 - **My contribution:** I set the rules while building my reactivation tagger. The ordering rule came from an incident in my call-list agent. Claude Code drafted the text.
 - **Example:** [examples/outbound-rollout-safety.md](examples/outbound-rollout-safety.md)
-- **Evidence:** one documented production incident: a message-length error hit after the "contacted" state had already been written. The dry-run switch, the minimum pool size, and the cooldown are all visible in the public tagger (`reactivate.py` in JJO-Nurture).
+- **Evidence:** one documented production incident: a message-length error hit after the "contacted" state had already been written. The rules are applied in the private production tagger. The public showcase ([jiujitsuoutlet/jjo-nurture-showcase](https://github.com/jiujitsuoutlet/jjo-nurture-showcase)) demonstrates two of them on fictional data: dry-run by default and a cooldown window.
 - **Not verified:** no automated tests ship with the skill.
 
 ### 4. [matsquad-email-rebuild](skills/matsquad-email-rebuild/SKILL.md): moving a client's email and SMS to a new platform
