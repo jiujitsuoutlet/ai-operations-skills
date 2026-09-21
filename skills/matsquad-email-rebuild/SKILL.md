@@ -35,7 +35,7 @@ Three emails over two weeks, one ask: "still want these?" Everyone silent comes 
 
 ## Platform economics... the frame that ends debates
 
-Per-contact platforms (Constant Contact, Mailchimp) make growth a billing penalty and cleaning the only discount. Per-send platforms invert it: HighLevel email runs $0.675 per 1,000 sends with unlimited contacts; SMS lands around $0.013/segment all-in with carrier fees. Compute the client's current **channel cost per click** (platform bill ÷ monthly clicks) against their own paid CPC... One client was paying about 20x more per email click than per ad click. Then show the new bill: it dropped to roughly a third, all-in. Cleaning the list LOWERS the new bill instead of being homework.
+Per-contact platforms (Constant Contact, Mailchimp) make growth a billing penalty and cleaning the only discount. Per-send platforms invert it: HighLevel email runs $0.675 per 1,000 sends with unlimited contacts; SMS lands around $0.013/segment all-in with carrier fees. Compute the client's current **channel cost per click** (platform bill ÷ monthly clicks) against their own paid CPC... Illustrative example: $2.00 per email click against $0.40 per ad click (illustrative numbers). Then show the projected new bill next to the old one. Cleaning the list LOWERS the new bill instead of being homework.
 
 ## Ownership doctrine... non-negotiable
 

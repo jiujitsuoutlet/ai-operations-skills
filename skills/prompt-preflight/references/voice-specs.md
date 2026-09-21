@@ -20,7 +20,7 @@ Long flowing paragraphs. Stream-of-consciousness momentum. Mythic/epic sentence 
 - Highest-performing formula: specific personal story with concrete detail → vulnerability without self-pity → lesson/reframe → accessible metaphor → encouragement or question to the reader.
 - Worst-performing: leading with concepts or frameworks. Never do it.
 - Signature move: zoom from the specific topic to a universal principle at the very end. One sentence. Earned.
-- Pure humor/community posts massively outperform teaching posts (a Missouri humor post hit roughly 10x the views of strong teaching posts). Not every post needs a lesson.
+- Pure humor/community posts massively outperform teaching posts (a Missouri humor post far outdrew strong teaching posts). Not every post needs a lesson.
 - No emoji stacking, no blog headers, no corporate jargon.
 - POV: JJO page = we/us. Personal profile = I/me.
 
@@ -58,8 +58,8 @@ Note the distinction that matters: he uses short lines CONSTANTLY as isolated dr
 ### Subject lines (performance-derived, clean-era data only)
 
 - **TWO winning shapes, both proven.** (a) `How Jiu-Jitsu [verb] [life outcome]`, and (b) a **short blunt first-person confession**... "I quit Jiu Jitsu", "I'm a loser". The confession shape holds the account record, 21 points clear of the formula's best. Reach for it when the email has a real admission at its center.
-- **Rotate the FORM, not only the topic.** Four consecutive memoirs landed in a band roughly 10 points wide. The first teaching email beat the top of that band by 21 points. Memoir, teaching, present-tense news, and a direct question are four distinct forms... do not run the same one twice in a row. Announcements are historically strong here (a new-mats announcement is the #2 all-time performer).
-- **Winning formula: `How Jiu-Jitsu [verb] [life outcome]`.** Four of the top six performers. Landed: "[How Jiu-Jitsu (verb) (personal outcome)]" (highest of the three), "[How Jiu-Jitsu (verb) (someone's) (life outcome)]" (about 7 points lower), "[How Jiu-Jitsu Helped [Member] (overcome) (personal outcome)]" (about 23 points below the highest).
+- **Rotate the FORM, not only the topic.** Four consecutive memoirs landed well below the account record. The first teaching email set it. Memoir, teaching, present-tense news, and a direct question are four distinct forms... do not run the same one twice in a row. Announcements are historically strong here (a new-mats announcement is the #2 all-time performer).
+- **Winning formula: `How Jiu-Jitsu [verb] [life outcome]`.** Four of the top six performers. Landed, highest first: "[How Jiu-Jitsu (verb) (personal outcome)]", "[How Jiu-Jitsu (verb) (someone's) (life outcome)]", "[How Jiu-Jitsu Helped [Member] (overcome) (personal outcome)]".
 - **Lead with emotional stake**... saved, lives, trauma, quit, darkest, bad news. The only subject feature that survives controls (+7.3 points).
 - **Question-mark subjects were abandoned in 2026** (32% of subjects in 2023 → 0% in 2026). Do not reintroduce them.
 - **Tests NULL, not levers:** question marks, ellipses in the subject, "you/your", name-dropping guests. Promotional words test slightly *positive*, so the instinct that promo language depresses opens is not supported here.
@@ -67,7 +67,7 @@ Note the distinction that matters: he uses short lines CONSTANTLY as isolated dr
 
 ### Measurement rule (do not skip)
 
-**Never compare open rates across different list sizes.** Open rate swings ~5x on audience size alone (about a 5x swing between tiny and large sends). This is the largest error source in this account's history and it has produced confidently wrong conclusions more than once. Compare only within a delivery-size band... and never use a pre-2024-04 campaign for any performance conclusion, since half that mail was neither delivered nor tracked.
+**Never compare open rates across different list sizes.** Open rate swings ~5x on audience size alone. This is the largest error source in this account's history and it has produced confidently wrong conclusions more than once. Compare only within a delivery-size band... and never use a pre-2024-04 campaign for any performance conclusion, since half that mail was neither delivered nor tracked.
 
 ### Sponsor outreach (unchanged)
 
