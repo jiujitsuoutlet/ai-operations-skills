@@ -4,18 +4,18 @@
 
 ## Docs
 
-- [How Our AI Agents Work Together](https://github.com/jiujitsuoutlet/ai-operations-skills/blob/main/docs/multi-agent-coordination-playbook.md): the 60-second multi-agent pattern, roles, delegation briefs, the GitHub trail that lets any agent take over any job (roster, HANDOFF.md, CHANGELOG.md, run records, Agent-Role and Agent-Runner commit trailers), approval gates, the weekly steward and takeover drill, and an FAQ for "how do I make AI agents work together."
-- [TEAM.md template](https://github.com/jiujitsuoutlet/ai-operations-skills/blob/main/docs/templates/TEAM.md): rules for every agent and the roster of jobs.
-- [HANDOFF.md template](https://github.com/jiujitsuoutlet/ai-operations-skills/blob/main/docs/templates/HANDOFF.md): how a successor agent takes over one job cold.
-- [CHANGELOG.md template](https://github.com/jiujitsuoutlet/ai-operations-skills/blob/main/docs/templates/CHANGELOG.md): dated changes and hard-won failures for one job.
-- [Run record template](https://github.com/jiujitsuoutlet/ai-operations-skills/blob/main/docs/templates/RUN-LOG.md): the seven fields of one important run.
-- [Steward prompt](https://github.com/jiujitsuoutlet/ai-operations-skills/blob/main/docs/templates/STEWARD-PROMPT.md): the weekly scheduled agent that leads the team, with its hard limits.
+- [How Our AI Agents Work Together](https://raw.githubusercontent.com/jiujitsuoutlet/ai-operations-skills/main/docs/multi-agent-coordination-playbook.md): the 60-second multi-agent pattern, roles, delegation briefs, the GitHub trail that lets any agent take over any job (roster, HANDOFF.md, CHANGELOG.md, run records, Agent-Role and Agent-Runner commit trailers), approval gates, the weekly steward and takeover drill, and an FAQ for "how do I make AI agents work together."
+- [TEAM.md template](https://raw.githubusercontent.com/jiujitsuoutlet/ai-operations-skills/main/docs/templates/TEAM.md): rules for every agent and the roster of jobs.
+- [HANDOFF.md template](https://raw.githubusercontent.com/jiujitsuoutlet/ai-operations-skills/main/docs/templates/HANDOFF.md): how a successor agent takes over one job cold.
+- [CHANGELOG.md template](https://raw.githubusercontent.com/jiujitsuoutlet/ai-operations-skills/main/docs/templates/CHANGELOG.md): dated changes and hard-won failures for one job.
+- [Run record template](https://raw.githubusercontent.com/jiujitsuoutlet/ai-operations-skills/main/docs/templates/RUN-LOG.md): the seven fields of one important run.
+- [Steward prompt](https://raw.githubusercontent.com/jiujitsuoutlet/ai-operations-skills/main/docs/templates/STEWARD-PROMPT.md): the weekly scheduled agent that leads the team, with its hard limits.
 
 ## Skills
 
-- [skills/](https://github.com/jiujitsuoutlet/ai-operations-skills/tree/main/skills): 65 reusable AI workflow skills. See [CATALOG.md](https://github.com/jiujitsuoutlet/ai-operations-skills/blob/main/CATALOG.md) for the full list with evidence notes.
-- [report-back](https://github.com/jiujitsuoutlet/ai-operations-skills/blob/main/skills/report-back/SKILL.md): plain-English change reports, and the GitHub trail rule for the next agent.
-- [parallel-claude-lanes](https://github.com/jiujitsuoutlet/ai-operations-skills/blob/main/skills/parallel-claude-lanes/SKILL.md): several agent sessions in one repository with no collisions.
+- [skills/](https://github.com/jiujitsuoutlet/ai-operations-skills/tree/main/skills): 65 reusable AI workflow skills. See [CATALOG.md](https://raw.githubusercontent.com/jiujitsuoutlet/ai-operations-skills/main/CATALOG.md) for the full list with evidence notes.
+- [report-back](https://raw.githubusercontent.com/jiujitsuoutlet/ai-operations-skills/main/skills/report-back/SKILL.md): plain-English change reports, and the GitHub trail rule for the next agent.
+- [parallel-claude-lanes](https://raw.githubusercontent.com/jiujitsuoutlet/ai-operations-skills/main/skills/parallel-claude-lanes/SKILL.md): several agent sessions in one repository with no collisions.
 - [examples/](https://github.com/jiujitsuoutlet/ai-operations-skills/tree/main/examples): illustrative examples written from skill procedures (synthetic data, not real run transcripts).
 
 ## Author
