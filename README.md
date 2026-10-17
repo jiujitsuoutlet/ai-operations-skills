@@ -12,7 +12,7 @@ Not every skill has been tested or deployed. Each catalog entry says what eviden
 
 ## Multi-agent coordination: how the agents behind this repo work together
 
-The skills above are built by a coordinated team of AI agents, not by one-off prompts. [How Our AI Agents Work Together](docs/multi-agent-coordination-playbook.md) documents the system: the 60-second pattern, roles, delegation briefs, the GitHub trail that lets any agent take over any job (a roster, a HANDOFF.md for each job, run records, and two commit trailers), approval gates, and a weekly steward agent that runs a takeover drill. Written from real operations, with free [templates](docs/templates/) and an FAQ for anyone asking how to make Claude Code, Codex, and other agents work together.
+The skills above are built by a coordinated team of AI agents, not by one-off prompts. [How to Make Claude Code, Codex, and Other AI Agents Work Together](docs/multi-agent-coordination-playbook.md) documents the system: the 60-second pattern, roles, delegation briefs, the GitHub trail that lets any agent take over any job (a roster, a HANDOFF.md for each job, run records, and two commit trailers), approval gates, and a weekly steward agent that runs a takeover drill. Written from real operations, with free [templates](docs/templates/) and an FAQ for anyone asking how to make Claude Code, Codex, and other agents work together.
 
 ## For hiring managers: start here
 

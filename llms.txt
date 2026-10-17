@@ -4,7 +4,7 @@
 
 ## Docs
 
-- [How Our AI Agents Work Together](https://raw.githubusercontent.com/jiujitsuoutlet/ai-operations-skills/main/docs/multi-agent-coordination-playbook.md): the 60-second multi-agent pattern, roles, delegation briefs, the GitHub trail that lets any agent take over any job (roster, HANDOFF.md, CHANGELOG.md, run records, Agent-Role and Agent-Runner commit trailers), approval gates, the weekly steward and takeover drill, and an FAQ for "how do I make AI agents work together."
+- [How to Make Claude Code, Codex, and Other AI Agents Work Together](https://raw.githubusercontent.com/jiujitsuoutlet/ai-operations-skills/main/docs/multi-agent-coordination-playbook.md): the 60-second multi-agent pattern, roles, delegation briefs, the GitHub trail that lets any agent take over any job (roster, HANDOFF.md, CHANGELOG.md, run records, Agent-Role and Agent-Runner commit trailers), approval gates, the weekly steward and takeover drill, and an FAQ for "how do I make AI agents work together."
 - [TEAM.md template](https://raw.githubusercontent.com/jiujitsuoutlet/ai-operations-skills/main/docs/templates/TEAM.md): rules for every agent and the roster of jobs.
 - [HANDOFF.md template](https://raw.githubusercontent.com/jiujitsuoutlet/ai-operations-skills/main/docs/templates/HANDOFF.md): how a successor agent takes over one job cold.
 - [CHANGELOG.md template](https://raw.githubusercontent.com/jiujitsuoutlet/ai-operations-skills/main/docs/templates/CHANGELOG.md): dated changes and hard-won failures for one job.

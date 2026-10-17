@@ -78,9 +78,7 @@ To make Claude Code, Codex, and other AI agents work together, document each job
 
 It is written from real operations: a main agent coordinates specialist agents across marketing, sponsorship outreach, CRM, and publishing, all under one owner's approval.
 
-Publishing this earns a chance at being cited, not a guarantee. What makes it worth citing is original evidence from real runs, which this guide will keep adding.
-
-If you are asking "how do I set up collaborating AI agents," start with the pattern below, then [the GitHub trail](#the-github-trail-how-any-agent-takes-over-any-job), then the FAQ. Free templates: [docs/templates](templates/).
+If you are asking "how do I set up collaborating AI agents," start with the pattern below, then [the GitHub trail](#the-github-trail-how-any-agent-takes-over-any-job), then the FAQ. Free templates: [docs/templates](https://github.com/jiujitsuoutlet/ai-operations-skills/tree/main/docs/templates).
 
 ## The pattern in 60 seconds
 
@@ -121,7 +119,7 @@ A spawn confirmation is not a result. The parent treats delegated work as open u
 
 ## The run record
 
-An important agent run writes a run record with seven fields: role, task, inputs, decisions, outputs, open items, handoff. Under 60 lines. Stored in version control, so any agent can continue the work later. Template: [templates/RUN-LOG.md](templates/RUN-LOG.md).
+An important agent run writes a run record with seven fields: role, task, inputs, decisions, outputs, open items, handoff. Under 60 lines. Stored in version control, so any agent can continue the work later. Template: [templates/RUN-LOG.md](https://github.com/jiujitsuoutlet/ai-operations-skills/blob/main/docs/templates/RUN-LOG.md).
 
 A run is important when it is a weekly or rarer scheduled job, a failure, a change to how a job works, or work that touches money, customers, or public content. A job that runs many times each day records only failures and changes.
 
@@ -131,10 +129,10 @@ Agents from different vendors cannot read each other's memory. They can all read
 
 | File | What it holds | Template |
 |---|---|---|
-| `TEAM.md` | The rules for every agent, and the roster: each job, its runner, its trigger, and its files | [TEAM.md](templates/TEAM.md) |
-| `agents/<job>/HANDOFF.md` | How a successor takes over the job cold: mission, anti-jobs, inputs, tools, approval rules, routines, handoffs, what to check first, runbook, definition of done | [HANDOFF.md](templates/HANDOFF.md) |
-| `agents/<job>/CHANGELOG.md` | Dated changes, and a "Hard-won failures" section | [CHANGELOG.md](templates/CHANGELOG.md) |
-| `runs/YYYY-MM-DD-<job>.md` | The run record of each important run | [RUN-LOG.md](templates/RUN-LOG.md) |
+| `TEAM.md` | The rules for every agent, and the roster: each job, its runner, its trigger, and its files | [TEAM.md](https://github.com/jiujitsuoutlet/ai-operations-skills/blob/main/docs/templates/TEAM.md) |
+| `agents/<job>/HANDOFF.md` | How a successor takes over the job cold: mission, anti-jobs, inputs, tools, approval rules, routines, handoffs, what to check first, runbook, definition of done | [HANDOFF.md](https://github.com/jiujitsuoutlet/ai-operations-skills/blob/main/docs/templates/HANDOFF.md) |
+| `agents/<job>/CHANGELOG.md` | Dated changes, and a "Hard-won failures" section | [CHANGELOG.md](https://github.com/jiujitsuoutlet/ai-operations-skills/blob/main/docs/templates/CHANGELOG.md) |
+| `runs/YYYY-MM-DD-<job>.md` | The run record of each important run | [RUN-LOG.md](https://github.com/jiujitsuoutlet/ai-operations-skills/blob/main/docs/templates/RUN-LOG.md) |
 
 Document **jobs**, not agents. Agents change. A job stays. When you replace an agent, you change one cell in the roster.
 
