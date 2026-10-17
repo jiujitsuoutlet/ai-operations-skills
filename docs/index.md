@@ -10,7 +10,7 @@ Practical AI workflow documentation from real business operations, by Paul Tokgo
 
 ## Start here
 
-**[How Our AI Agents Work Together](multi-agent-coordination-playbook.html)** — the full guide: the 60-second pattern, roles (main agent, coordinator, worker, rotating leader), delegation briefs, handoffs, run records, approval gates, the weekly improvement loop, and an FAQ answering "how do I set up collaborating AI agents."
+**[How Our AI Agents Work Together](multi-agent-coordination-playbook.html)** - the full guide: the 60-second pattern, roles (main agent, coordinator, worker, rotating leader), delegation briefs, handoffs, run records, approval gates, the weekly improvement loop, and an FAQ answering "how do I set up collaborating AI agents."
 
 ## The skills
 
