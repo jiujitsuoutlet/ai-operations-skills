@@ -10,6 +10,10 @@ A skill provides reusable instructions, checks, and approval steps for an AI-ass
 
 Not every skill has been tested or deployed. Each catalog entry says what evidence exists.
 
+## Multi-agent coordination: how the agents behind this repo work together
+
+The skills above are built by a coordinated team of AI agents, not by one-off prompts. [How Our AI Agents Work Together](https://jiujitsuoutlet.github.io/ai-operations-skills/multi-agent-coordination-playbook.html) documents the system: the 60-second pattern, roles (main agent, coordinator, worker, rotating leader), delegation briefs, handoffs, seven-field run records, approval gates, and the weekly improvement loop that keeps it getting better. Written from real operations, with an FAQ for anyone asking how to set up collaborating AI agents.
+
 ## For hiring managers: start here
 
 These five are the most relevant to client onboarding, implementation, customer success, and marketing operations. Each links to an **illustrative example**: synthetic data written from the skill's procedure, not a transcript of a real run.

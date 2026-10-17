@@ -1,0 +1,17 @@
+# AI Operations Skills
+
+> Practical AI workflow documentation from real business operations by Paul Tokgozoglu: multi-agent coordination, CRM automation, email campaigns, and client onboarding.
+
+## Docs
+
+- [How Our AI Agents Work Together](docs/multi-agent-coordination-playbook.md): the 60-second multi-agent pattern, roles (main agent, coordinator, worker, rotating leader), delegation briefs, handoffs, seven-field run records, approval gates, the weekly improvement loop, and an FAQ for "how do I set up collaborating AI agents."
+- Live page: https://jiujitsuoutlet.github.io/ai-operations-skills/multi-agent-coordination-playbook.html
+
+## Skills
+
+- [skills/](skills/): 65 reusable AI workflow skills. See [CATALOG.md](CATALOG.md) for the full list with evidence notes.
+- [examples/](examples/): illustrative examples written from skill procedures (synthetic data, not real run transcripts).
+
+## Author
+
+Paul Tokgozoglu, gym owner and marketing operations practitioner. I define requirements, direct development with Claude Code and Codex, and test the results against real operations.
