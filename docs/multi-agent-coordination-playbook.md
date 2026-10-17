@@ -9,7 +9,7 @@ description: "A practical guide to running multiple AI agents as one coordinated
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "How Our AI Agents Work Together",
-  "description": "A practical guide to running multiple AI agents as one coordinated team: roles, delegation briefs, handoffs, run records, approval gates, and a weekly improvement loop. Written from real operations.",
+  "description": "A practical guide to running Claude Code, Codex, and other AI agents as one coordinated team: roles, delegation briefs, a GitHub trail any agent can take over from, approval gates, and a weekly steward with a takeover drill. Written from real operations.",
   "author": {
     "@type": "Person",
     "name": "Paul Tokgozoglu",
@@ -26,6 +26,16 @@ description: "A practical guide to running multiple AI agents as one coordinated
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I make Claude Code and Codex work together on one repository?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Give both agents the same rules. Codex reads AGENTS.md. Claude Code reads CLAUDE.md. Put the same short block in both files, and point it at one roster file. Make each commit name its job and its runner with two trailers."}
+    },
+    {
+      "@type": "Question",
+      "name": "How do I hand off an AI agent's job to another agent?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Give the new agent the job's HANDOFF.md, its CHANGELOG.md, and its last 3 run records. Then run a takeover drill: ask the new agent to write the steps and to list each guess. Fix each gap before the real handover."}
+    },
     {
       "@type": "Question",
       "name": "How do I set up collaborating AI agents?",
@@ -84,7 +94,7 @@ If you are asking "how do I set up collaborating AI agents," start with the patt
 
 **Worker.** A subagent given one self-contained task. It does the task, writes a run record, and reports back. It never talks to the owner directly.
 
-**Leader (rotating).** One agent voted by the working group each cycle. The leader sends the weekly update and owns the improvement backlog. The vote is re-held regularly so no single agent's habits become law.
+**Leader.** One agent leads the weekly loop, sends the weekly update, and owns the improvement backlog. Pick it by the four criteria in [The weekly steward](#the-weekly-steward-and-the-takeover-drill). Check the choice again each quarter, so no single agent's habits become law. The owner can change it at any time.
 
 ## The brief: how work is delegated
 
@@ -100,14 +110,75 @@ A spawn confirmation is not a result. The parent treats delegated work as open u
 
 ## Handoffs
 
-- Handoffs travel through the runtime, not through chat or side files.
+- Inside one runtime, handoffs travel through the runtime. Between runtimes and vendors, they travel through files in GitHub. See [The GitHub trail](#the-github-trail-how-any-agent-takes-over-any-job).
 - A handoff names: what was done, what was found, what is still open, and what the next agent must know.
 - When a worker changes a shared file, it names the file and the lines so the parent can verify without re-reading everything.
 - If a result is wrong, the parent corrects it as quality control and logs the correction. The worker is not blamed in the record; the fix is.
 
 ## The run record
 
-Every agent run writes a run record with seven fields: role, task, inputs, decisions, outputs, open items, handoff. Under 60 lines. Stored with the work it belongs to, in version control, so any agent can pick up the thread later. The full spec is the Agent Documentation Standard.
+An important agent run writes a run record with seven fields: role, task, inputs, decisions, outputs, open items, handoff. Under 60 lines. Stored in version control, so any agent can continue the work later. Template: [templates/RUN-LOG.md](templates/RUN-LOG.md).
+
+A run is important when it is a weekly or rarer scheduled job, a failure, a change to how a job works, or work that touches money, customers, or public content. A job that runs many times each day records only failures and changes.
+
+## The GitHub trail: how any agent takes over any job
+
+Agents from different vendors cannot read each other's memory. They can all read a repository. So the team keeps its state in GitHub, in four kinds of files:
+
+| File | What it holds | Template |
+|---|---|---|
+| `TEAM.md` | The rules for every agent, and the roster: each job, its runner, its trigger, and its files | [TEAM.md](templates/TEAM.md) |
+| `agents/<job>/HANDOFF.md` | How a successor takes over the job cold: mission, anti-jobs, inputs, tools, approval rules, routines, handoffs, what to check first, runbook, definition of done | [HANDOFF.md](templates/HANDOFF.md) |
+| `agents/<job>/CHANGELOG.md` | Dated changes, and a "Hard-won failures" section | [CHANGELOG.md](templates/CHANGELOG.md) |
+| `runs/YYYY-MM-DD-<job>.md` | The run record of each important run | [RUN-LOG.md](templates/RUN-LOG.md) |
+
+Document **jobs**, not agents. Agents change. A job stays. When you replace an agent, you change one cell in the roster.
+
+Three more rules make the trail complete:
+
+- **Two commit trailers.** Each commit names the job and the runner. Git reads trailers natively:
+  ```
+  Agent-Role: call-list-agent
+  Agent-Runner: codex
+  ```
+  ```bash
+  git log --format='%h %(trailers:key=Agent-Role,valueonly) %(trailers:key=Agent-Runner,valueonly) %s'
+  ```
+- **Copy each scheduled task prompt into GitHub.** A prompt that lives only inside a scheduler is lost when the task is deleted. Keep a labeled copy in the job's HANDOFF.md. The steward re-syncs it each week.
+- **Put the rules where each agent loads them.** Codex and many other tools read `AGENTS.md`. Claude Code reads `CLAUDE.md`. Put the same short block in both, and point it at `TEAM.md`. An agent that loads neither (some cloud agents) needs the rules in its own instructions.
+
+## The weekly steward and the takeover drill
+
+One scheduled agent, the team-steward, leads the weekly loop:
+
+1. **Audit.** Count the commits with both trailers. Compare the scheduled tasks to the roster. Add each missing job.
+2. **Sync.** Copy each changed task prompt into its HANDOFF.md.
+3. **Learn.** Read the new CHANGELOGs and run records. Update the folders it maintains. Report gaps in the others.
+4. **Drill.** Start one fresh, read-only subagent with only one job's HANDOFF.md. Ask it to write how it will do the job and to list each guess. Each guess is a gap in the docs.
+5. **Draft.** Write general lessons for the public guide in the run record. A person publishes them.
+6. **Report.** Send the owner one short update: the score, what changed, and up to 3 decisions.
+
+The drill is the most important step. It tests the docs the same way a real handover does.
+
+**Pick the leader by these four criteria:** it runs on a schedule with no person present, it can read and write the repository, it can see the work of the other agents, and it can report to the owner. Prefer the runner with the fewest tools that can send, spend, or publish.
+
+**Safety for an unattended leader:**
+
+- **Thin prompt, thick HANDOFF.** The scheduled prompt is short and points at the HANDOFF.md. Improve the job with a commit.
+- **Hard limits stay outside the repo.** The prompt lists what the steward must never do. Any agent can edit a repo file, so a file must never be able to widen the steward's tools.
+- **The steward cannot edit its own HANDOFF.md.** The owner maintains it.
+- **The drill subagent is read-only.** It reads the docs. It does not run the job.
+- **A person publishes.** A pushed branch in a public repo is public at once. The steward only drafts.
+
+## Field note: three agents, one request
+
+When this system was set up, three agents from three different vendors got the same request on the same night. Within 15 minutes, each one built its own roster, its own public guide, and its own weekly report. Each team also voted for a leader from its own vendor.
+
+What fixed it:
+
+- Fetch every repository the work touches before you build, and again before you push.
+- Merge into the system that is already there. Do not start a rival copy.
+- When agents vote for themselves, break the tie on capability, and let the owner decide.
 
 ## Approval rules
 
@@ -123,7 +194,7 @@ The system gets better on a schedule, not by accident:
 1. **Collect.** Every week, the loop reads run records, owner corrections, and incidents.
 2. **Propose.** It drafts updates to the standards and playbooks.
 3. **Separate.** Internal doc fixes ship automatically. Anything public-facing waits for the owner's approval.
-4. **Re-consent.** The working group reviews the changes and re-votes the leader. The owner can overrule anything.
+4. **Review.** The owner reads the weekly update and decides. Public changes wait for the owner. The leader choice is checked again each quarter. The owner can overrule anything.
 
 Corrections become permanent rules the same day they are made. A fix that is not written down is a fix that will be needed again.
 
@@ -131,6 +202,18 @@ Corrections become permanent rules the same day they are made. A fix that is not
 
 **How do I set up collaborating AI agents?**
 Start with one main agent and written briefs. Give each subagent a self-contained task with the outcome, constraints, and facts it needs. Require the main agent to verify results before use. Add run records once the pattern works. Do not add more agents until the handoffs are clean.
+
+**How do I make Claude Code and Codex work together on one repository?**
+Give both agents the same rules. Codex reads `AGENTS.md`. Claude Code reads `CLAUDE.md`. Put the same short block in both files, and point it at one roster file. Make each commit name its job and its runner with two trailers.
+
+**How do I hand off an AI agent's job to another agent?**
+Give the new agent the job's HANDOFF.md, its CHANGELOG.md, and its last 3 run records. Then run a takeover drill: ask the new agent to write the steps and to list each guess. Fix each gap before the real handover.
+
+**What is AGENTS.md?**
+`AGENTS.md` is a Markdown file at the root of a repository. It tells coding agents how to work in that repository. Many agent tools read it. See [agents.md](https://agents.md).
+
+**How do I document what my AI agents do?**
+Document the job, not the agent. Keep a roster, a HANDOFF.md and a CHANGELOG.md for each job, a run record for each important run, and two trailers on each commit.
 
 **How many agents do I need?**
 Fewer than you think. One main agent plus workers per parallel workstream is enough for most operations. Add a coordinator only when one initiative needs its own planning and multiple workers.

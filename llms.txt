@@ -1,16 +1,22 @@
 # AI Operations Skills
 
-> Practical AI workflow documentation from real business operations by Paul Tokgozoglu: multi-agent coordination, CRM automation, email campaigns, and client onboarding.
+> Practical AI workflow documentation from real business operations by Paul Tokgozoglu: how to run Claude Code, Codex, and other AI agents as one documented team, plus skills for CRM automation, email campaigns, and client onboarding.
 
 ## Docs
 
-- [How Our AI Agents Work Together](docs/multi-agent-coordination-playbook.md): the 60-second multi-agent pattern, roles (main agent, coordinator, worker, rotating leader), delegation briefs, handoffs, seven-field run records, approval gates, the weekly improvement loop, and an FAQ for "how do I set up collaborating AI agents."
-- Live page: https://jiujitsuoutlet.github.io/ai-operations-skills/multi-agent-coordination-playbook.html
+- [How Our AI Agents Work Together](https://github.com/jiujitsuoutlet/ai-operations-skills/blob/main/docs/multi-agent-coordination-playbook.md): the 60-second multi-agent pattern, roles, delegation briefs, the GitHub trail that lets any agent take over any job (roster, HANDOFF.md, CHANGELOG.md, run records, Agent-Role and Agent-Runner commit trailers), approval gates, the weekly steward and takeover drill, and an FAQ for "how do I make AI agents work together."
+- [TEAM.md template](https://github.com/jiujitsuoutlet/ai-operations-skills/blob/main/docs/templates/TEAM.md): rules for every agent and the roster of jobs.
+- [HANDOFF.md template](https://github.com/jiujitsuoutlet/ai-operations-skills/blob/main/docs/templates/HANDOFF.md): how a successor agent takes over one job cold.
+- [CHANGELOG.md template](https://github.com/jiujitsuoutlet/ai-operations-skills/blob/main/docs/templates/CHANGELOG.md): dated changes and hard-won failures for one job.
+- [Run record template](https://github.com/jiujitsuoutlet/ai-operations-skills/blob/main/docs/templates/RUN-LOG.md): the seven fields of one important run.
+- [Steward prompt](https://github.com/jiujitsuoutlet/ai-operations-skills/blob/main/docs/templates/STEWARD-PROMPT.md): the weekly scheduled agent that leads the team, with its hard limits.
 
 ## Skills
 
-- [skills/](skills/): 65 reusable AI workflow skills. See [CATALOG.md](CATALOG.md) for the full list with evidence notes.
-- [examples/](examples/): illustrative examples written from skill procedures (synthetic data, not real run transcripts).
+- [skills/](https://github.com/jiujitsuoutlet/ai-operations-skills/tree/main/skills): 65 reusable AI workflow skills. See [CATALOG.md](https://github.com/jiujitsuoutlet/ai-operations-skills/blob/main/CATALOG.md) for the full list with evidence notes.
+- [report-back](https://github.com/jiujitsuoutlet/ai-operations-skills/blob/main/skills/report-back/SKILL.md): plain-English change reports, and the GitHub trail rule for the next agent.
+- [parallel-claude-lanes](https://github.com/jiujitsuoutlet/ai-operations-skills/blob/main/skills/parallel-claude-lanes/SKILL.md): several agent sessions in one repository with no collisions.
+- [examples/](https://github.com/jiujitsuoutlet/ai-operations-skills/tree/main/examples): illustrative examples written from skill procedures (synthetic data, not real run transcripts).
 
 ## Author
 

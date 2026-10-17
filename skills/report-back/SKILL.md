@@ -14,6 +14,14 @@ The operator (Nejat) is non-coding and is the final authority. After any change,
 - **What you verified** (see the `verify-before-asserting` skill) — how you know it works, not just that you believe it does.
 - **What's left / what's next**, if anything.
 
+## Leave the trail in GitHub (every repo, every runner)
+
+The report tells the operator. The trail tells the next agent. Do both. The full rules are in [How Our AI Agents Work Together](../../docs/multi-agent-coordination-playbook.md#the-github-trail-how-any-agent-takes-over-any-job).
+
+1. Add two trailers to each commit: `Agent-Role: <slug>` and `Agent-Runner: <claude-code | codex | cloud-agent | scheduled-task | ci>`. Find the slug in the roster, `TEAM.md`. If the work is not for a role, write `Agent-Role: none`.
+2. Write a run record in `runs/` for a weekly or rarer scheduled job, a failure, a change to how a job works, or work that touches money, customers, or public content.
+3. If you changed how a job works, update its `agents/<slug>/HANDOFF.md` and CHANGELOG.md in the same pass.
+
 ## Style
 
 - Plain English. Define any jargon inline the first time. No wall of diff.
